@@ -1,0 +1,25 @@
+.container {
+    width: 66%;
+    max-width: 700px;
+    margin: 0 auto;
+    height: 100%;
+    background-color: whitesmoke;
+    display: flex;
+}
+
+app-navbar {
+    width: 25%;
+    height: 100%;
+    border-right: white 3px solid;
+}
+  
+main {
+  width: 75%;
+  height: 100%;
+}
+  
+app-feed,
+app-add-post {
+    height: 100%;
+}
+  

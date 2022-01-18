@@ -1,0 +1,8 @@
+<div class="card">
+    <img [src]="post.image" alt="post image" (click)="_r.navigateByUrl('/post/'+post.id)">
+    <p>{{post.description}}</p>
+    <div class="btns">
+        <button (click)="post.toggleLike()">{{post.like? 'dislike':'like'}}</button>
+        <button (click)="_ps.del(post.id);_r.navigateByUrl('/feed/')">DELETE</button>
+    </div>
+</div>

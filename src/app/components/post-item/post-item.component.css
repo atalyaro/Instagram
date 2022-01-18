@@ -1,0 +1,28 @@
+.card {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: indianred 2px solid;
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  p {
+    padding: 7px;
+  }
+  img {
+    width: 100%;
+    height: 337px;
+    object-fit: cover;
+    object-position: center center;
+    margin-bottom: 7px;
+  }
+  .btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  button {
+    padding: 5px 20px;
+    margin: 7px;
+  }
+  

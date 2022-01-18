@@ -1,0 +1,41 @@
+<form [formGroup]="myForm" (ngSubmit)="_us.login(myForm.value); _r.navigateByUrl('/feed')">
+    <input [ngClass]="{ border: myForm.controls.name.dirty &&  myForm.controls.name.invalid }" type="text"
+        placeholder="insert name..." formControlName="name" />
+    <span *ngIf=" myForm.controls.name.dirty && myForm.controls.name.invalid">Name is required</span>
+    <br />
+    <input [ngClass]="{ border: myForm.controls.username.dirty && myForm.controls.username.invalid}" type="text"
+        placeholder="insert username..." formControlName="username" />
+    <span *ngIf=" myForm.controls.username.dirty && myForm.controls.username.errors?.required">Username is
+        required</span>
+    <span *ngIf="myForm.controls.username.dirty &&  myForm.controls.username.errors?.minlength">user name must be at
+        least
+        {{
+      myForm.controls.username.errors.minlength.requiredLength -
+        myForm.controls.username.errors.minlength.actualLength
+    }}
+        chars, you have to add more chars.</span>
+    <br />
+    <input #img [ngClass]="{ border: myForm.controls.img.invalid }" type="text" placeholder="insert image URL..."
+        formControlName="img" />
+    <input type="submit" value="Save Changes" [disabled]="myForm.invalid" />
+    <span *ngIf=" myForm.controls.img.dirty && myForm.controls.img.invalid">Avatar is required</span>
+    <input [ngClass]="{'invalid': myForm.controls.id.dirty && myForm.controls.id.invalid}" type="text"
+        placeholder="enter valid id - 9 digits zero padded..." formControlName="id">
+    <span *ngIf="myForm.controls.id.dirty && myForm.controls.id.errors?.required">id is required</span>
+    <span *ngIf="myForm.controls.id.dirty && myForm.controls.id.errors?.minlength">too short...</span>
+    <span *ngIf="myForm.controls.id.dirty && myForm.controls.id.errors?.maxlength">too longt...</span>
+    <span *ngIf="myForm.controls.id.dirty && myForm.controls.id.errors?.israeliId">please enter VALID id...</span>
+</form>
+
+<!-- <p>{{myForm.value | json }}</p>
+<p>{{myForm.controls.username.errors | json }}</p> -->
+
+<hr>
+<p>img: valid {{myForm.controls.img.valid }}</p>
+<p>img: invalid {{myForm.controls.img.invalid }}</p>
+<hr>
+<p>img: touched {{myForm.controls.img.touched }}</p>
+<p>img: untouched {{myForm.controls.img.untouched }}</p>
+<hr>
+<p>img: pristine {{myForm.controls.img.pristine }}</p>
+<p>img: dirty {{myForm.controls.img.dirty }}</p>

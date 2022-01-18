@@ -1,0 +1,21 @@
+ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    width: 100%;
+    /* font-size: large; */
+    padding: 10px 25px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: tomato;
+  }
+  
+  li:hover {
+    background-color: #fff;
+  }
+  

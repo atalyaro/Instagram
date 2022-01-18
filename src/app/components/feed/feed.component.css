@@ -1,0 +1,6 @@
+.list {
+    overflow-y: auto;
+    height: calc(100vh - 20px);
+    padding-top: 20px;
+  }
+  

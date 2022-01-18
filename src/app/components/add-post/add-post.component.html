@@ -1,0 +1,11 @@
+<!-- TRV ==> Template Reference Variable -->
+<form (ngSubmit)="_ser.add(post); _r.navigateByUrl('/feed');">
+    <input #img="ngModel" type="text" name="img" [(ngModel)]="post.img" placeholder="post img url.." required>
+    <br>
+    <input #desc="ngModel" type="text" name="descriprion" [(ngModel)]="post.description" placeholder="post description"
+        required minlength="2">
+    <br>
+    <input type="submit" value="ADD POST" [disabled]="img.invalid || desc.invalid">
+</form>
+<p>{{ post | json }}</p>
+<p>valid?: {{ desc.valid }}</p>
